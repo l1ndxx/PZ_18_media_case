@@ -1,1 +1,79 @@
-*,*::before,*::after{box-sizing:border-box}html,body{height:100%}body{position:relative;min-width:800px;height:inherit;margin:0;overflow:hidden;font-family:Arial,sans-serif;background:#171717;color:#fff}.page__video{position:absolute;inset:0;width:100%;height:100%;/* TODO object-fit/object-position */z-index:-2}body::before{/* TODO overlay */}.page__title{position:relative;z-index:1;margin:0;padding:10vh 8vw;font-size:clamp(52px,8vw,120px);line-height:.9;text-transform:uppercase}.page__mark{color:#d8ff55}.page__title:hover::after{/* TODO tooltip */}
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-width: 800px;
+    height: inherit;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #171717;
+    color: #fff
+}
+
+.page__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2ж
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+.page__title {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    margin: 0;
+    color: #fff;
+    padding: 10vh 8vw;
+    font-size: clamp(52px, 8vw, 120px);
+    line-height: .9;
+    text-transform: uppercase;
+    
+}
+
+.page__title::before {
+    content: "*";
+    margin-right: 10px;
+    color: #d8ff55;
+}
+
+.page__mark {
+    color: #d8ff55;
+}
+
+.page__title:hover::after {
+   content: "hhhhhhhh \A ggggggggg";
+   position: absolute;
+   left: 50%;
+   top: 100%;
+   transform: translateX(-50%);
+   background-color: #171717;
+   color: #fff;
+   padding: 10px;
+   border-radius: 5px;
+   border: 1px solid #d8ff55;
+   font-size: 14px;
+   white-space: pre;
+   z-index: 10;
+}
